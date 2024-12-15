@@ -3,7 +3,7 @@ import requests
 import os
 from langchain.tools.retriever import create_retriever_tool
 from langchain_community.vectorstores import FAISS
-from langchain.embeddings import HuggingFaceEmbeddings
+from langchain_community.embeddings import HuggingFaceEmbeddings
 
 
 def get_retriever_tool():
@@ -23,7 +23,7 @@ def get_retriever_tool():
 
 def news_helper(symbol: str, start_date: str, last_date: str):
     #   "c3smgt2ad3ide69e4jtg"
-    FINNHUB_API_KEY = os.env["FINNHUB_API_KEY"]
+    FINNHUB_API_KEY = os.environ["FINNHUB_API_KEY"]
     API_ENDPOINT = "https://finnhub.io/api/v1/company-news"
     queryString = f"{API_ENDPOINT}?symbol={symbol}&from={start_date}&to={last_date}&token={FINNHUB_API_KEY}"
 

@@ -4,3 +4,5 @@ langchain-community
 unstructured
 langgraph
 faiss-cpu
+fastapi[standard]
+sentence-transformers
