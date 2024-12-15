@@ -1,0 +1,6 @@
+langchain
+langchain-openai
+langchain-community
+unstructured
+langgraph
+faiss-cpu

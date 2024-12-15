@@ -1,0 +1,15 @@
+{
+    "dependencies": [
+        "langchain",
+        "langchain-openai",
+        "langgraph",
+        "langchain-community",
+        "unstructured",
+        "faiss-cpu",
+        "./fin-agent"
+    ],
+    "graphs": {
+        "finagent": "./fin-agent/agent.py:graph"
+    },
+    "env": ".env"
+}
