@@ -6,3 +6,6 @@ langgraph
 faiss-cpu
 fastapi[standard]
 sentence-transformers
+psycopg
+psycopg-pool
+langgraph-checkpoint-postgres
