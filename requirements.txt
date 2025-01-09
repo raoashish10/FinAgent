@@ -4,8 +4,8 @@ langchain-community
 unstructured
 langgraph
 faiss-cpu
-fastapi[standard]
 sentence-transformers
+fastapi[standard]
 psycopg
 psycopg-pool
 langgraph-checkpoint-postgres
