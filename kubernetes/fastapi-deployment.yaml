@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fastapi
+  template:
+    metadata:
+      labels:
+        app: fastapi
+    spec:
+      containers:
+        - name: finagent
+          image: finagent:latest # Replace with your FastAPI image
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: DB_HOST
+              value: "postgres-service"  # PostgreSQL service name in Kubernetes
+            - name: DB_PORT
+              value: "5432"
+            - name: DB_USER
+              value: "postgres"
+            - name: DB_PASSWORD
+              value: "password"
+            - name: DB_NAME
+              value: "finagent"
+          ports:
+            - containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fastapi-service
+spec:
+  selector:
+    app: fastapi
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
